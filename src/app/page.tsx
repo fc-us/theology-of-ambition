@@ -129,7 +129,10 @@ export default function Home() {
       <p>I've seen ambition bear fruit—<br />and quietly bend good desires.</p>
       <p>Avoiding this felt safer.<br />Naming it felt costly.</p>
       <p>Every ambition moves toward an end.<br />The question is whether that end leads toward faithfulness—or away from it.</p>
-      <p className="signature">— Andrew Feng</p>
+      <div className="author-signature">
+        <img src="/andrew.jpg" alt="Andrew Feng" width={60} height={60} className="author-photo" />
+        <p className="signature">— Andrew Feng</p>
+      </div>
     </div>,
 
     // PAGE 3: OPENING

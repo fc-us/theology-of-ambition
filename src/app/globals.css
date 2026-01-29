@@ -210,16 +210,24 @@ p:last-child {
 }
 
 /* Why This page - compact styling */
+.page-why-this {
+  font-size: 0.85em;
+}
+
 .page-why-this p {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.4em;
 }
 
 .page-why-this .emphasis {
-  margin-bottom: 0.8em;
+  margin-bottom: 0.6em;
+}
+
+.page-why-this .author-signature {
+  margin-top: 1em;
 }
 
 .page-why-this .signature {
-  margin-top: 1.2em;
+  margin-top: 0;
 }
 
 /* strike class removed - using strike-animate instead */
