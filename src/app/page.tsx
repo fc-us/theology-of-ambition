@@ -243,6 +243,11 @@ export default function Home() {
 
   return (
     <div className="book" ref={bookRef}>
+      {/* Logo - top left */}
+      <button className="site-logo" onClick={() => goToPage(0)}>
+        Theology of Ambition
+      </button>
+
       {/* Section navigation - top right */}
       <div className="section-nav">
         {pageLabels.map((label, i) => label && (

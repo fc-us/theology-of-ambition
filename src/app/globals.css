@@ -511,6 +511,28 @@ p:last-child {
   outline-offset: 2px;
 }
 
+/* Site Logo - Top Left */
+.site-logo {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  font-family: var(--font);
+  font-size: 0.6em;
+  font-weight: 400;
+  color: var(--ink);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 50;
+  transition: opacity 0.2s ease;
+}
+
+.site-logo:hover {
+  opacity: 0.7;
+}
+
 /* Section Navigation - Top Right */
 .section-nav {
   position: fixed;
@@ -744,6 +766,11 @@ p:last-child {
     bottom: 24px;
   }
 
+  .site-logo {
+    top: 24px;
+    left: 24px;
+  }
+
   .section-nav {
     right: 24px;
     top: 24px;
@@ -779,7 +806,13 @@ p:last-child {
     margin-top: 1.5em;
   }
 
-  /* Hide section nav labels on mobile, show only "Why This" */
+  .site-logo {
+    top: 20px;
+    left: 20px;
+    font-size: 0.7em;
+  }
+
+  /* Hide section nav labels on mobile */
   .section-nav {
     top: 20px;
     right: 20px;
