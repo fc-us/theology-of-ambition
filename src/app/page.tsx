@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -9,7 +8,7 @@ export default function Home() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const bookRef = useRef<HTMLDivElement>(null);
 
-  const totalPages = 8;
+  const totalPages = 9;
 
   const playPageTurnSound = () => {
     try {
@@ -122,8 +121,20 @@ export default function Home() {
       <h1>Theology of Ambition</h1>
     </div>,
 
-    // PAGE 2: OPENING
-    <div key="2" className="page-center">
+    // PAGE 2: WHY THIS
+    <div key="2" className="page-center page-why-this">
+      <p className="label">Why This Project</p>
+      <p className="emphasis">Being well known is not the same as being known well.</p>
+      <p>I've spent years around ambitious Christians who loved God and worked hard.</p>
+      <p>I've seen ambition bear fruit—and quietly bend good desires.</p>
+      <p>Avoiding this felt safer. Naming it felt costly.</p>
+      <p>Every ambition moves toward an end.</p>
+      <p>The question is whether that end leads toward faithfulness—or away from it.</p>
+      <p className="signature">— Andrew Feng</p>
+    </div>,
+
+    // PAGE 3: OPENING
+    <div key="3" className="page-center">
       <p>Every ambition moves toward an end.</p>
       <p className="dim">The church is uneasy with ambition.</p>
       <p className="dim">So we avoid it. Or excuse it.</p>
@@ -133,8 +144,8 @@ export default function Home() {
       <p className="question">Where is your ambition taking you?</p>
     </div>,
 
-    // PAGE 3: THE CLAIM
-    <div key="3" className="page-center">
+    // PAGE 4: THE CLAIM
+    <div key="4" className="page-center">
       <p className="label">The Claim</p>
       <p>Ambition doesn't need to <span className="cross-out">die</span>.</p>
       <p className="emphasis">It needs a true end.</p>
@@ -142,8 +153,8 @@ export default function Home() {
       <p className="dim">Direction toward the right end is.</p>
     </div>,
 
-    // PAGE 4: THE TENSION
-    <div key="4" className="page-center">
+    // PAGE 5: THE TENSION
+    <div key="5" className="page-center">
       <p className="label">The Tension</p>
       <p>Ambition builds. Leads. Multiplies.</p>
       <p>But it also narrows vision. Speeds decisions.</p>
@@ -151,8 +162,8 @@ export default function Home() {
       <p className="emphasis">Not every end is worth reaching.</p>
     </div>,
 
-    // PAGE 5: THE FRAME
-    <div key="5" className="page-center">
+    // PAGE 6: THE FRAME
+    <div key="6" className="page-center">
       <p className="label">The Frame</p>
       <p>We were made to build, not drift.</p>
       <p>Christ chose limits before influence.</p>
@@ -162,8 +173,8 @@ export default function Home() {
       <p>If it fractures people, it has missed the way.</p>
     </div>,
 
-    // PAGE 6: WHAT THIS IS
-    <div key="6" className="page-center">
+    // PAGE 7: WHAT THIS IS
+    <div key="7" className="page-center">
       <p className="label">What This Is</p>
       <p>A theological project.</p>
       <p>A curated collection of voices.</p>
@@ -174,16 +185,16 @@ export default function Home() {
       <p className="emphasis">Tired of choosing between ambition and discipleship.</p>
     </div>,
 
-    // PAGE 7: WHAT THIS ISN'T
-    <div key="7" className="page-center">
+    // PAGE 8: WHAT THIS ISN'T
+    <div key="8" className="page-center">
       <p className="label">What This Isn't</p>
       <p className="strike-static">Hustle theology</p>
       <p className="strike-static">Career advice</p>
       <p className="strike-static">Permission to keep going faster</p>
     </div>,
 
-    // PAGE 8: CLOSING
-    <div key="8" className="page-center page-closing">
+    // PAGE 9: CLOSING
+    <div key="9" className="page-center page-closing">
       <p>If something here resonated—</p>
       <p>if you've felt this tension—</p>
       <p className="dim">we'd like to hear from you.</p>
@@ -215,18 +226,19 @@ export default function Home() {
   ];
 
   const pageVariants = [
-    'page--dark', 'page--light', 'page--dark', 'page--light', 'page--dark', 'page--light', 'page--dark', 'page--light'
+    'page--dark', 'page--light', 'page--dark', 'page--light', 'page--dark', 'page--light', 'page--dark', 'page--light', 'page--dark'
   ];
 
   const pageLabels = [
     null,           // Page 1: Title (no label)
-    null,           // Page 2: Opening (no label)
-    'The Claim',    // Page 3
-    'The Tension',  // Page 4
-    'The Frame',    // Page 5
-    'What This Is', // Page 6
-    'What This Isn\'t', // Page 7
-    null,           // Page 8: Closing (no label)
+    'Why This',     // Page 2: Why This
+    null,           // Page 3: Opening (no label)
+    'The Claim',    // Page 4
+    'The Tension',  // Page 5
+    'The Frame',    // Page 6
+    'What This Is', // Page 7
+    'What This Isn\'t', // Page 8
+    null,           // Page 9: Closing (no label)
   ];
 
   return (
@@ -242,7 +254,6 @@ export default function Home() {
             {label}
           </button>
         ))}
-        <Link href="/about" className="nav-link">Why This</Link>
       </div>
 
       {/* Page dots */}

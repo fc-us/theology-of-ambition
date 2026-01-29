@@ -209,6 +209,19 @@ p:last-child {
   font-style: italic;
 }
 
+/* Why This page - compact styling */
+.page-why-this p {
+  margin-bottom: 0.5em;
+}
+
+.page-why-this .emphasis {
+  margin-bottom: 0.8em;
+}
+
+.page-why-this .signature {
+  margin-top: 1.2em;
+}
+
 /* strike class removed - using strike-animate instead */
 
 .contact {
