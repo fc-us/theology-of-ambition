@@ -16,8 +16,6 @@ export default function About() {
       <article className="article">
         <h1>Why This Project</h1>
 
-        <p className="lead">This project began with a quiet tension:</p>
-
         <p className="emphasis">Being well known is not the same as being known well.</p>
 
         <p>I've spent years around ambitious Christians who loved God and worked hard.</p>
