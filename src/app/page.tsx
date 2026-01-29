@@ -231,13 +231,13 @@ export default function Home() {
 
   const pageLabels = [
     null,           // Page 1: Title (no label)
-    'Why This',     // Page 2: Why This
+    'Why',          // Page 2: Why This
     null,           // Page 3: Opening (no label)
     'Claim',        // Page 4
     'Tension',      // Page 5
     'Frame',        // Page 6
-    'What This Is', // Page 7
-    'What This Isn\'t', // Page 8
+    'What',         // Page 7
+    'What Not',     // Page 8
     null,           // Page 9: Closing (no label)
   ];
 
