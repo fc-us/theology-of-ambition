@@ -222,12 +222,41 @@ p:last-child {
   margin-bottom: 0.6em;
 }
 
-.page-why-this .author-signature {
+.page-why-this .editors-section {
   margin-top: 1em;
 }
 
-.page-why-this .signature {
-  margin-top: 0;
+/* Editors section */
+.editors-section {
+  margin-top: 1.5em;
+}
+
+.editors-label {
+  font-size: 0.75em;
+  font-style: italic;
+  color: var(--dim);
+  margin-bottom: 0.6em;
+}
+
+.editors-row {
+  display: flex;
+  gap: 1.5em;
+}
+
+.editor {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.editor-photo {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.editor-name {
+  font-style: italic;
+  font-size: 0.9em;
 }
 
 /* strike class removed - using strike-animate instead */
