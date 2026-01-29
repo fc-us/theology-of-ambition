@@ -137,6 +137,7 @@ export default function Home() {
 
     // PAGE 3: OPENING
     <div key="3" className="page-center">
+      <p className="label">The Opening</p>
       <p>Every ambition moves toward an end.</p>
       <p className="dim">The church is uneasy with ambition.<br />So we avoid it. Or excuse it.</p>
       <p>Meanwhile, ambition quietly shapes leaders.</p>
@@ -217,7 +218,7 @@ export default function Home() {
   const pageLabels = [
     null,           // Page 1: Title (no label)
     'Why',          // Page 2: Why This
-    null,           // Page 3: Opening (no label)
+    'Opening',      // Page 3: Opening
     'Claim',        // Page 4
     'Tension',      // Page 5
     'Frame',        // Page 6
