@@ -158,8 +158,8 @@ export default function Home() {
       <p>Christ chose limits before influence.</p>
       <p>Faithfulness is not optimization.</p>
       <p>Every ambition moves toward an end.</p>
-      <p>If it fractures people, it has missed the way.</p>
       <p>It will cost you speed, certainty, and applause.</p>
+      <p>If it fractures people, it has missed the way.</p>
     </div>,
 
     // PAGE 6: WHAT THIS IS
