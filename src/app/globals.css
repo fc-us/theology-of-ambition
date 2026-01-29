@@ -1,26 +1,773 @@
 @import "tailwindcss";
 
+/* =============================================================================
+   THEOLOGY OF AMBITION — Elegant Serif Throughout
+   ============================================================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors */
+  --bg-dark: #d8d3cd;
+  --bg-light: #e8e4df;
+  --ink: #2a2622;
+  --dim: #8a857f;
+  --ember: #d4552b;
+
+  /* Single Font Family */
+  --font: var(--font-instrument-serif), Georgia, 'Times New Roman', serif;
+
+  /* Animation timing (synced with JS) */
+  --transition-duration: 750ms;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  height: 100%;
+  overflow: hidden;
+  scroll-behavior: auto;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font);
+  font-size: 36px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Text selection */
+::selection {
+  background: var(--ember);
+  color: var(--bg-light);
+}
+
+/* -----------------------------------------------------------------------------
+   Book Container
+   ----------------------------------------------------------------------------- */
+.book {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.book-pages {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* -----------------------------------------------------------------------------
+   Page Base
+   ----------------------------------------------------------------------------- */
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page--dark {
+  background: var(--bg-dark);
+}
+
+.page--light {
+  background: var(--bg-light);
+}
+
+.page-inner {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 64px;
+}
+
+.page-next {
+  z-index: 1;
+}
+
+.page-current {
+  z-index: 10;
+}
+
+/* -----------------------------------------------------------------------------
+   Typography — All Serif
+   ----------------------------------------------------------------------------- */
+h1 {
+  font-size: clamp(3.5rem, 10vw, 6rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin-bottom: 0.55em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.dim {
+  color: var(--dim);
+}
+
+.emphasis {
+  font-size: 1.35em;
+  line-height: 1.4;
+  margin: 0.6em 0;
+}
+
+.question {
+  font-size: 1.25em;
+  color: var(--ember);
+  margin-top: 1.2em;
+}
+
+/* -----------------------------------------------------------------------------
+   Micro-interactions (minimal)
+   ----------------------------------------------------------------------------- */
+
+/* 1. Title slow fade-in */
+.title-fade {
+  opacity: 0;
+  animation: titleFadeIn 2s ease-out forwards;
+}
+
+@keyframes titleFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* 2. "die" gets crossed out */
+.cross-out {
+  position: relative;
+  display: inline-block;
+}
+
+.cross-out::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0.08em;
+  background: var(--ember);
+  animation: strikeThrough 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes strikeThrough {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+/* 3. "What This Isn't" static strikethroughs */
+.strike-static {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin-bottom: 0.6em;
+}
+
+.strike-static::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 0.08em;
+  background: var(--ember);
+}
+
+.label {
+  font-size: 0.7em;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: var(--dim);
+  margin-bottom: 0.8em;
+  margin-top: 1.8em;
+}
+
+.label:first-child {
+  margin-top: 0;
+}
+
+.signature {
+  color: var(--ember);
+  margin-top: 1.5em;
+  font-style: italic;
+}
+
+/* strike class removed - using strike-animate instead */
+
+.contact {
+  margin-top: 1.5em;
+}
+
+.contact a {
+  font-size: 1.1em;
+  color: var(--ember);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ember);
+  padding-bottom: 2px;
+}
+
+.contact a:hover {
+  border-bottom-width: 2px;
+}
+
+/* -----------------------------------------------------------------------------
+   Closing Page
+   ----------------------------------------------------------------------------- */
+.page-closing {
+  max-width: 550px;
+}
+
+.closing-cta {
+  margin: 1.8em 0 2.2em;
+}
+
+.closing-link {
+  color: var(--ember);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ember);
+  padding-bottom: 2px;
+  transition: border-width 0.2s ease;
+}
+
+.closing-link:hover {
+  border-bottom-width: 2px;
+}
+
+.closing-note {
+  color: var(--dim);
+  font-size: 0.85em;
+  margin-bottom: 1.5em;
+}
+
+.newsletter-inline {
+  display: flex;
+  gap: 0.6em;
+  max-width: 320px;
+}
+
+.newsletter-input {
+  flex: 1;
+  font-family: var(--font);
+  font-size: 0.85em;
+  padding: 0.5em 0.7em;
+  border: 1px solid var(--dim);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.newsletter-input::placeholder {
+  color: var(--dim);
+  font-style: italic;
+}
+
+.newsletter-input:focus {
+  border-color: var(--ink);
+}
+
+.newsletter-button {
+  font-family: var(--font);
+  font-size: 0.85em;
+  padding: 0.5em 1.2em;
+  border: 1px solid var(--dim);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.newsletter-button:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bg-light);
+}
+
+.closing-tagline {
+  font-style: italic;
+  color: var(--dim);
+  font-size: 0.85em;
+}
+
+/* -----------------------------------------------------------------------------
+   Frame Grid (6 anchors)
+   ----------------------------------------------------------------------------- */
+.frame-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8em 3em;
+  margin-top: 1.5em;
+  font-size: 0.85em;
+}
+
+.frame-grid > div {
+  color: var(--dim);
+}
+
+.term {
+  color: var(--ink);
+  display: block;
+  margin-bottom: 0.15em;
+}
+
+/* -----------------------------------------------------------------------------
+   Two Column Layout
+   ----------------------------------------------------------------------------- */
+.page-two-col {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4em;
+  align-items: start;
+}
+
+/* -----------------------------------------------------------------------------
+   Page Transition — Scale + Fade
+   ----------------------------------------------------------------------------- */
+.page-current {
+  transition: none;
+}
+
+.page-next {
+  opacity: 0;
+  transform: scale(1.02);
+  filter: blur(2px);
+}
+
+.page-current.transitioning-out {
+  animation: fadeOutRecede var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.page-next.transitioning-in {
+  animation: fadeInEmerge var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeOutRecede {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.97);
+    filter: blur(2px);
+  }
+}
+
+@keyframes fadeInEmerge {
+  0% {
+    opacity: 0;
+    transform: scale(1.02);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   Navigation
+   ----------------------------------------------------------------------------- */
+.page-dots {
+  position: fixed;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 50;
+}
+
+.page-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid var(--dim);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-dot:hover {
+  border-color: var(--ink);
+  transform: scale(1.3);
+}
+
+.page-dot:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+}
+
+.page-dot.active {
+  background: var(--ember);
+  border-color: var(--ember);
+}
+
+.scroll-hint {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  font-family: var(--font);
+  color: var(--dim);
+  font-size: 0.6em;
+  font-style: italic;
+  cursor: pointer;
+  padding: 12px 24px;
+  z-index: 50;
+}
+
+.scroll-hint:hover {
+  color: var(--ink);
+}
+
+.scroll-hint::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 12px;
+  background: currentColor;
+  margin: 8px auto 0;
+}
+
+.scroll-hint:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+}
+
+.page-number {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  font-size: 0.6em;
+  font-style: italic;
+  color: var(--dim);
+  z-index: 50;
+}
+
+/* -----------------------------------------------------------------------------
+   Navigation
+   ----------------------------------------------------------------------------- */
+.nav {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  z-index: 50;
+}
+
+.nav-link {
+  font-size: 0.7em;
+  font-style: italic;
+  color: var(--dim);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--ink);
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+}
+
+/* Section Navigation - Top Right */
+.section-nav {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  gap: 1.5em;
+  z-index: 50;
+}
+
+.section-nav-item {
+  font-family: var(--font);
+  font-size: 0.6em;
+  font-style: italic;
+  color: var(--dim);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.section-nav-item:hover {
+  color: var(--ink);
+}
+
+.section-nav-item.active {
+  color: var(--ember);
+}
+
+.section-nav-item:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+}
+
+/* -----------------------------------------------------------------------------
+   Static Page (About / Why This)
+   ----------------------------------------------------------------------------- */
+.static-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--bg-dark);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 120px 10% 80px;
+  overflow-y: auto;
+}
+
+/* Nav is already positioned at left, no override needed for static-page */
+
+.article {
+  width: 100%;
+  max-width: 900px;
+}
+
+.article-two-col {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 4em;
+  max-width: 1100px;
+}
+
+.article-main {
+  /* Main content column */
+}
+
+.article-sidebar {
+  padding-top: 3.5em;
+  font-size: 0.85em;
+}
+
+.article-sidebar h2 {
+  font-size: 1.1em;
+  margin-bottom: 0.6em;
+  margin-top: 1.8em;
+}
+
+.article-sidebar h2:first-child {
+  margin-top: 0;
+}
+
+.article-sidebar p {
+  color: var(--dim);
+}
+
+.article-sidebar .contributor-list {
+  margin-bottom: 0;
+}
+
+.article-sidebar .contributor-list li {
+  margin-bottom: 0.4em;
+  padding-left: 1.2em;
+}
+
+.article h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin-bottom: 1.5em;
+  color: var(--dim);
+}
+
+.article p {
+  margin-bottom: 0.5em;
+}
+
+.article .lead {
+  color: var(--dim);
+  margin-bottom: 0.8em;
+}
+
+.article .emphasis {
+  font-size: 1.3em;
+  margin: 0.8em 0;
+}
+
+.article .signature {
+  color: var(--ember);
+  font-style: italic;
+  margin: 0;
+}
+
+.author-signature {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  margin-top: 2.5em;
+}
+
+.author-photo {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contributor-section {
+  margin-top: 4em;
+  padding-top: 3em;
+  border-top: 1px solid var(--dim);
+}
+
+.contributor-section h2 {
+  font-size: 1.4em;
+  margin-bottom: 0.8em;
+  margin-top: 2em;
+}
+
+.contributor-section h2:first-child {
+  margin-top: 0;
+}
+
+.contributor-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5em 0;
+}
+
+.contributor-list li {
+  margin-bottom: 0.6em;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.contributor-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--dim);
+}
+
+.contributor-section a {
+  color: var(--ember);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ember);
+}
+
+.contributor-section a:hover {
+  border-bottom-width: 2px;
+}
+
+/* -----------------------------------------------------------------------------
+   Responsive
+   ----------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  body {
+    font-size: 28px;
+  }
+
+  .page-inner {
+    padding: 0 40px;
+  }
+
+  .frame-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8em;
+  }
+
+  .page-two-col {
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+
+  .page-dots {
+    right: 24px;
+  }
+
+  .page-number {
+    right: 24px;
+    bottom: 24px;
+  }
+
+  .scroll-hint {
+    bottom: 24px;
+  }
+
+  .nav {
+    top: 24px;
+    left: 24px;
+  }
+
+  .section-nav {
+    right: 24px;
+    top: 24px;
+    gap: 1em;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 22px;
+  }
+
+  .page-inner {
+    padding: 0 28px;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .emphasis {
+    font-size: 1.2em;
+  }
+
+  .nav {
+    top: 20px;
+    left: 20px;
+  }
+
+  .section-nav {
+    display: none;
+  }
+
+  .static-page {
+    padding: 100px 6% 60px;
+  }
+
+  .article-two-col {
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+
+  .article-sidebar {
+    padding-top: 2em;
+    border-top: 1px solid var(--dim);
+  }
+
+  .newsletter-inline {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .newsletter-button {
+    width: 100%;
+  }
 }
