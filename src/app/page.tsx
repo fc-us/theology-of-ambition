@@ -126,86 +126,68 @@ export default function Home() {
       <p className="label">Why This Project</p>
       <p className="emphasis">Being well known is not the same as being known well.</p>
       <p>I've spent years around ambitious Christians who loved God and worked hard.</p>
-      <p>I've seen ambition bear fruit—and quietly bend good desires.</p>
-      <p>Avoiding this felt safer. Naming it felt costly.</p>
-      <p>Every ambition moves toward an end.</p>
-      <p>The question is whether that end leads toward faithfulness—or away from it.</p>
+      <p>I've seen ambition bear fruit—<br />and quietly bend good desires.</p>
+      <p>Avoiding this felt safer.<br />Naming it felt costly.</p>
+      <p>Every ambition moves toward an end.<br />The question is whether that end leads toward faithfulness—or away from it.</p>
       <p className="signature">— Andrew Feng</p>
     </div>,
 
     // PAGE 3: OPENING
     <div key="3" className="page-center">
       <p>Every ambition moves toward an end.</p>
-      <p className="dim">The church is uneasy with ambition.</p>
-      <p className="dim">So we avoid it. Or excuse it.</p>
-      <p>Ambition quietly shapes leaders.</p>
-      <p>Sometimes toward faithfulness.</p>
-      <p>Sometimes toward exhaustion or collapse.</p>
+      <p className="dim">The church is uneasy with ambition.<br />So we avoid it. Or excuse it.</p>
+      <p>Meanwhile, ambition quietly shapes leaders.</p>
+      <p>Sometimes toward faithfulness.<br />Sometimes toward exhaustion or collapse.</p>
       <p className="question">Where is your ambition taking you?</p>
     </div>,
 
     // PAGE 4: THE CLAIM
     <div key="4" className="page-center">
       <p className="label">The Claim</p>
-      <p>Ambition doesn't need to <span className="cross-out">die</span>.</p>
-      <p className="emphasis">It needs a true end.</p>
-      <p className="dim">Intensity isn't the issue.</p>
-      <p className="dim">Direction toward the right end is.</p>
+      <p>Ambition doesn't need to <span className="cross-out">die</span>.<br />It needs a true end.</p>
+      <p className="dim">Intensity isn't the problem.<br />Direction is.</p>
     </div>,
 
     // PAGE 5: THE TENSION
     <div key="5" className="page-center">
       <p className="label">The Tension</p>
-      <p>Ambition builds. Leads. Multiplies.</p>
-      <p>But it also narrows vision. Speeds decisions.</p>
-      <p>And reveals what we really want.</p>
+      <p>Ambition builds.<br />Leads.<br />Multiplies.</p>
+      <p>It also narrows vision.<br />Speeds decisions.<br />Reveals what we really want.</p>
       <p className="emphasis">Not every end is worth reaching.</p>
     </div>,
 
     // PAGE 6: THE FRAME
     <div key="6" className="page-center">
       <p className="label">The Frame</p>
-      <p>We were made to build, not drift.</p>
-      <p>Christ chose limits before influence.</p>
-      <p>Faithfulness is not optimization.</p>
-      <p>Every ambition moves toward an end.</p>
-      <p>It will cost you speed, certainty, and applause.</p>
-      <p>If it fractures people, it has missed the way.</p>
+      <p>We were made to build, not drift.<br />Christ chose limits before influence.<br />Faithfulness is not optimization.<br />Every ambition moves toward an end.<br />It will cost speed, certainty, and applause.<br />If it fractures people, it has missed the way.</p>
     </div>,
 
     // PAGE 7: WHAT THIS IS
     <div key="7" className="page-center">
       <p className="label">What This Is</p>
-      <p>A theological project.</p>
-      <p>A curated collection of voices.</p>
-      <p className="dim">Founders. Operators. Christians.</p>
-      <p className="label">Who It's For</p>
-      <p>Leaders who feel the tension.</p>
-      <p>Builders wanting faithfulness, not just fruit.</p>
-      <p className="emphasis">Tired of choosing between ambition and discipleship.</p>
+      <p>A theological project.<br />A curated collection of voices.</p>
+      <p className="dim">Written for founders, operators, and Christians<br />who feel the tension.</p>
+      <p>For builders seeking faithfulness, not just fruit.<br />For those tired of choosing between ambition and discipleship.</p>
     </div>,
 
     // PAGE 8: WHAT THIS ISN'T
     <div key="8" className="page-center">
       <p className="label">What This Isn't</p>
-      <p className="strike-static">Hustle theology</p>
-      <p className="strike-static">Career advice</p>
-      <p className="strike-static">Permission to keep going faster</p>
+      <p className="strike-static">Hustle theology.</p>
+      <p className="strike-static">Career advice.</p>
+      <p className="strike-static">Permission to keep going faster.</p>
     </div>,
 
     // PAGE 9: CLOSING
     <div key="9" className="page-center page-closing">
-      <p>If something here resonated—</p>
-      <p>if you've felt this tension—</p>
+      <p>If something here resonated—<br />if you've felt this tension—</p>
       <p className="dim">we'd like to hear from you.</p>
 
       <div className="closing-cta">
         <a href="mailto:andrewfengdts@gmail.com" className="closing-link">Start a conversation</a>
       </div>
 
-      <p className="closing-note">
-        Or stay close. We'll share reflections as this unfolds.
-      </p>
+      <p className="closing-note">Or stay close. We'll share reflections as this unfolds.</p>
 
       <form
         className="newsletter-inline"
