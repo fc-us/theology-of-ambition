@@ -223,7 +223,7 @@ export default function Home() {
     'Tension',      // Page 5
     'Frame',        // Page 6
     'What',         // Page 7
-    'What Not',     // Page 8
+    'Not This',     // Page 8
     null,           // Page 9: Closing (no label)
   ];
 
