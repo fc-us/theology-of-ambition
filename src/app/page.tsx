@@ -59,7 +59,7 @@ export default function Home() {
       setCurrentPage(pageIndex);
       setIsTransitioning(false);
       setNextPageIndex(null);
-    }, 750);
+    }, 450);
   };
 
   const nextPage = () => goToPage(currentPage + 1);
@@ -154,13 +154,12 @@ export default function Home() {
     // PAGE 5: THE FRAME
     <div key="5" className="page-center">
       <p className="label">The Frame</p>
-      <p className="dim">This project stands on six convictions.</p>
-      <p>We were made to build, not to drift.</p>
-      <p>Christ embraced limits before influence.</p>
-      <p>The faithful path includes loss.</p>
-      <p>Every ambition is exposed by where it leads.</p>
-      <p>The mission of God is not modest.</p>
-      <p>If ambition fractures people, it has lost its way.</p>
+      <p>We were made to build, not drift.</p>
+      <p>Christ chose limits before influence.</p>
+      <p>Faithfulness is not optimization.</p>
+      <p>Every ambition moves toward an end.</p>
+      <p>If it fractures people, it has missed the way.</p>
+      <p>It will cost you speed, certainty, and applause.</p>
     </div>,
 
     // PAGE 6: WHAT THIS IS
@@ -168,7 +167,7 @@ export default function Home() {
       <p className="label">What This Is</p>
       <p>A theological project.</p>
       <p>A curated collection of voices.</p>
-      <p className="dim">Pastors. Builders. Theologians.</p>
+      <p className="dim">Founders. Operators. Christians.</p>
       <p className="label">Who It's For</p>
       <p>Leaders who feel the tension.</p>
       <p>Builders wanting faithfulness, not just fruit.</p>
@@ -190,16 +189,22 @@ export default function Home() {
       <p className="dim">we'd like to hear from you.</p>
 
       <div className="closing-cta">
-        <a href="mailto:your-email@domain.com" className="closing-link">Start a conversation</a>
+        <a href="mailto:andrewfengdts@gmail.com" className="closing-link">Start a conversation</a>
       </div>
 
       <p className="closing-note">
         Or stay close. We'll share reflections as this unfolds.
       </p>
 
-      <form className="newsletter-inline" action="#" method="POST">
+      <form
+        className="newsletter-inline"
+        action="https://docs.google.com/forms/d/e/1FAIpQLSeydv04kVKPxTOpNEHdEdIsm7QpmmTDRD-yae7h9ukq8fdpAA/formResponse"
+        method="POST"
+        target="_blank"
+      >
         <input
           type="email"
+          name="entry.765071488"
           placeholder="your@email.com"
           className="newsletter-input"
           required
@@ -226,11 +231,6 @@ export default function Home() {
 
   return (
     <div className="book" ref={bookRef}>
-      {/* Navigation */}
-      <nav className="nav">
-        <Link href="/about" className="nav-link">Why This</Link>
-      </nav>
-
       {/* Section navigation - top right */}
       <div className="section-nav">
         {pageLabels.map((label, i) => label && (
@@ -242,6 +242,7 @@ export default function Home() {
             {label}
           </button>
         ))}
+        <Link href="/about" className="nav-link">Why This</Link>
       </div>
 
       {/* Page dots */}

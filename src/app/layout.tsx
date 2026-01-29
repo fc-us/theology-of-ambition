@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Instrument_Serif } from 'next/font/google';
 import './globals.css';
 
@@ -8,6 +8,12 @@ const instrumentSerif = Instrument_Serif({
   display: 'swap',
   variable: '--font-instrument-serif',
 });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: 'Theology of Ambition',

@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Theology of Ambition
 
-## Getting Started
+A minimal, editorial website for a collaborative book project exploring redeemed ambition under the lordship of Christ.
 
-First, run the development server:
+## Project Purpose
+
+This site serves as the public face for a theological book project that gathers pastors, theologians, and practitioners to ask: What does redeemed ambition look like?
+
+**Core thesis:** Ambition is not something to eliminate, but something to heal, order, and aim under the lordship of Christ.
+
+## Site Structure
+
+- `/` — Home (thesis and project introduction)
+- `/about` — About the project, audience, editor's role
+- `/thesis` — Full theological framework
+- `/contributors` — Invitation for essay contributions
+- `/contact` — Contact information
+
+## Design Philosophy
+
+- **Editorial, not promotional** — Quiet confidence, not startup energy
+- **Content-first** — Large margins, generous line spacing, reading-optimized
+- **Minimal** — System fonts for body, Instrument Serif for headlines
+- **No distractions** — No gradients, no animations, no hero images
+
+## Development
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+This generates a static export in `.next/` that can be deployed anywhere.
 
-To learn more about Next.js, take a look at the following resources:
+### Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Vercel (recommended):**
+```bash
+npx vercel
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Netlify:**
+```bash
+npm run build
+# Upload .next folder or connect to Git
+```
 
-## Deploy on Vercel
+**Any static host:**
+Add `output: 'export'` to `next.config.ts` for static HTML export.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Updating Content
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All content lives in page files:
+
+- `src/app/page.tsx` — Home
+- `src/app/about/page.tsx` — About
+- `src/app/thesis/page.tsx` — Thesis
+- `src/app/contributors/page.tsx` — Contributors
+- `src/app/contact/page.tsx` — Contact
+
+Edit the JSX directly. No CMS, no database.
+
+### Update the contact email
+
+Search for `your-email@domain.com` and replace with your actual email in:
+- `src/app/contributors/page.tsx`
+- `src/app/contact/page.tsx`
+
+## Design System
+
+Design tokens are defined in `src/app/globals.css`:
+
+```css
+--ink: #1a1a1a;      /* Primary text */
+--paper: #faf9f6;    /* Background */
+--stone: #6b6b6b;    /* Secondary text */
+--mist: #e8e6e1;     /* Borders */
+--accent: #8b7355;   /* Accent (links on hover) */
+```
+
+## Future Extensions
+
+- Add favicon (`public/favicon.ico`)
+- Add Open Graph image (`public/og-image.png`)
+- Add simple analytics (Plausible or Fathom)
+- Convert email link to contact form if needed
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) 16
+- [Tailwind CSS](https://tailwindcss.com/) 4
+- [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif) (Google Fonts)
+- TypeScript
+
+## License
+
+Content is proprietary. Code structure may be reused with attribution.
