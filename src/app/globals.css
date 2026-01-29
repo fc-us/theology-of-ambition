@@ -119,6 +119,16 @@ p:last-child {
   margin-bottom: 0;
 }
 
+/* Text highlight on hover */
+.page-inner p {
+  transition: color 0.2s ease;
+  cursor: default;
+}
+
+.page-inner p:hover {
+  color: var(--ember);
+}
+
 .dim {
   color: var(--dim);
 }
