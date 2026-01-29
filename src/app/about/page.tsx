@@ -20,16 +20,13 @@ export default function About() {
 
         <p className="emphasis">Being well known is not the same as being known well.</p>
 
-        <p>I've spent years around ambitious Christians—pastors, founders, builders—people who loved God sincerely and worked hard faithfully.</p>
+        <p>I've spent years around ambitious Christians who loved God and worked hard.</p>
 
-        <p>I've seen ambition bear fruit.</p>
-        <p>I've also seen it quietly bend good desires.</p>
+        <p>I've seen ambition bear fruit—</p>
+        <p>and quietly bend good desires.</p>
 
-        <p>Avoiding the subject felt safer.</p>
+        <p>Avoiding this felt safer.</p>
         <p>Naming it felt costly.</p>
-
-        <p>This is a painful project to write because ambition isn't abstract.</p>
-        <p className="emphasis">It's personal.</p>
 
         <p>Every ambition moves toward an end.</p>
         <p>The question is whether that end leads toward faithfulness—or away from it.</p>
