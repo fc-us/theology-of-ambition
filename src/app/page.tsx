@@ -233,9 +233,9 @@ export default function Home() {
     null,           // Page 1: Title (no label)
     'Why This',     // Page 2: Why This
     null,           // Page 3: Opening (no label)
-    'The Claim',    // Page 4
-    'The Tension',  // Page 5
-    'The Frame',    // Page 6
+    'Claim',        // Page 4
+    'Tension',      // Page 5
+    'Frame',        // Page 6
     'What This Is', // Page 7
     'What This Isn\'t', // Page 8
     null,           // Page 9: Closing (no label)
