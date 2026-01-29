@@ -254,6 +254,7 @@ p:last-child {
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 20%;
   flex-shrink: 0;
 }
 
