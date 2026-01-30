@@ -129,6 +129,18 @@ p:last-child {
   color: var(--ember);
 }
 
+/* Don't highlight labels, editors section, or special elements */
+.page-inner p.label:hover,
+.page-inner p.editors-label:hover,
+.page-inner p.signature:hover,
+.page-inner p.closing-note:hover {
+  color: var(--dim);
+}
+
+.page-inner p.label:hover {
+  color: var(--dim);
+}
+
 .dim {
   color: var(--dim);
 }
