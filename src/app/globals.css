@@ -968,6 +968,21 @@ p:last-child {
     margin-bottom: 0.8em;
   }
 
+  /* Editors section mobile */
+  .editors-row {
+    flex-direction: column;
+    gap: 0.8em;
+  }
+
+  .editor-photo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .editor-name {
+    font-size: 0.85em;
+  }
+
   /* About page nav on mobile - show back link only */
   .about-nav .section-nav-item {
     display: none;
