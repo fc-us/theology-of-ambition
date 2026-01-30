@@ -8,10 +8,7 @@ export default function Home() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const bookRef = useRef<HTMLDivElement>(null);
 
-  const totalPages = 10;
-  const [confessionText, setConfessionText] = useState('');
-  const [confessionSubmitted, setConfessionSubmitted] = useState(false);
-  const [userConfession, setUserConfession] = useState<string | null>(null);
+  const totalPages = 9;
 
   const playPageTurnSound = () => {
     try {
@@ -199,60 +196,8 @@ export default function Home() {
       <p className="strike-static">Permission to keep going faster.</p>
     </div>,
 
-    // PAGE 9: CONFESSION WALL
-    <div key="9" className="page-center page-confession">
-      <p className="label">The Wall</p>
-      <p className="confession-prompt">What ambition are you wrestling with?</p>
-
-      {!confessionSubmitted ? (
-        <form
-          className="confession-form"
-          action="https://docs.google.com/forms/d/e/1FAIpQLSf_PLACEHOLDER_CONFESSION_FORM/formResponse"
-          method="POST"
-          target="hidden_iframe"
-          onSubmit={() => {
-            setUserConfession(confessionText);
-            setConfessionSubmitted(true);
-            setConfessionText('');
-          }}
-        >
-          <textarea
-            name="entry.PLACEHOLDER"
-            placeholder="I want to be known for..."
-            className="confession-input"
-            value={confessionText}
-            onChange={(e) => setConfessionText(e.target.value)}
-            maxLength={200}
-            required
-          />
-          <div className="confession-footer">
-            <span className="confession-count">{confessionText.length}/200</span>
-            <button type="submit" className="confession-submit">Confess anonymously</button>
-          </div>
-        </form>
-      ) : (
-        <div className="confession-thanks">
-          <p>Thank you for your honesty.</p>
-          <p className="dim">You're not alone in this tension.</p>
-        </div>
-      )}
-
-      <div className="confession-wall">
-        <p className="wall-label">From others wrestling alongside you:</p>
-        <div className="confession-items">
-          {userConfession && (
-            <div className="confession-item confession-item-new">"{userConfession}"</div>
-          )}
-          <div className="confession-item">"I want to build something that outlasts me—but I'm not sure if that's faith or ego."</div>
-          <div className="confession-item">"To be the best in my field. I tell myself it's for God's glory, but I'm not always sure."</div>
-          <div className="confession-item">"I want influence. I want my ideas to matter. And I don't know if that's okay."</div>
-        </div>
-      </div>
-      <iframe name="hidden_iframe" style={{ display: 'none' }} />
-    </div>,
-
-    // PAGE 10: CLOSING
-    <div key="10" className="page-center page-closing">
+    // PAGE 9: CLOSING
+    <div key="9" className="page-center page-closing">
       <p>If something here resonated—<br />if you've felt this tension—</p>
       <p className="dim">we'd like to hear from you.</p>
 
@@ -281,7 +226,7 @@ export default function Home() {
   ];
 
   const pageVariants = [
-    'page--dark', 'page--light', 'page--dark', 'page--light', 'page--dark', 'page--light', 'page--dark', 'page--light', 'page--light', 'page--dark'
+    'page--dark', 'page--light', 'page--dark', 'page--light', 'page--dark', 'page--light', 'page--dark', 'page--light', 'page--dark'
   ];
 
   const pageLabels = [
@@ -293,8 +238,7 @@ export default function Home() {
     'Frame',        // Page 6
     'What',         // Page 7
     'Not This',     // Page 8
-    'Confess',      // Page 9: Confession Wall
-    null,           // Page 10: Closing (no label)
+    null,           // Page 9: Closing (no label)
   ];
 
   return (
