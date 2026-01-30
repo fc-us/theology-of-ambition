@@ -1,5 +1,13 @@
 import type { Metadata, Viewport } from 'next';
+import { Instrument_Serif } from 'next/font/google';
 import './globals.css';
+
+const instrumentSerif = Instrument_Serif({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-instrument',
+});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -32,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={instrumentSerif.variable}>
       <body>
         <main>{children}</main>
       </body>
