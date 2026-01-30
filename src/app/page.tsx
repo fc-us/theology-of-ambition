@@ -167,10 +167,10 @@ export default function Home() {
     </div>,
 
     // PAGE 5: THE TENSION
-    <div key="5" className="page-center">
+    <div key="5" className="page-center page-tension">
       <p className="label">The Tension</p>
-      <p>Ambition builds.<br />Leads.<br />Multiplies.</p>
-      <p>It also narrows vision.<br />Speeds decisions.<br />Reveals what we really want.</p>
+      <p>Ambition <span className="anim-builds">builds</span>.<br /><span className="anim-leads">Leads</span>.<br /><span className="anim-multiplies">Multiplies</span>.</p>
+      <p>It also <span className="anim-narrows">narrows vision</span>.<br /><span className="anim-speeds">Speeds decisions</span>.<br /><span className="anim-reveals">Reveals what we really want</span>.</p>
       <p className="emphasis">Not every end is worth reaching.</p>
     </div>,
 

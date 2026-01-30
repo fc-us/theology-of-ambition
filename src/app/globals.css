@@ -405,6 +405,70 @@ p:last-child {
 }
 
 /* -----------------------------------------------------------------------------
+   The Tension Page - Subtle Micro Animations
+   ----------------------------------------------------------------------------- */
+.page-tension span {
+  display: inline-block;
+}
+
+/* Positive side: builds, leads, multiplies - gentle fade up */
+.anim-builds {
+  animation: gentleFade 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s both;
+}
+
+.anim-leads {
+  animation: gentleFade 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0.6s both;
+}
+
+.anim-multiplies {
+  animation: gentleFade 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0.9s both;
+}
+
+/* Negative side: narrows, speeds, reveals - slightly different timing */
+.anim-narrows {
+  animation: narrowSubtle 1.4s cubic-bezier(0.25, 0.1, 0.25, 1) 1.4s both;
+}
+
+.anim-speeds {
+  animation: gentleFade 1s cubic-bezier(0.25, 0.1, 0.25, 1) 1.8s both;
+}
+
+.anim-reveals {
+  animation: revealSubtle 1.6s cubic-bezier(0.25, 0.1, 0.25, 1) 2.2s both;
+}
+
+@keyframes gentleFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes narrowSubtle {
+  from {
+    opacity: 0;
+    letter-spacing: 0.03em;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: normal;
+  }
+}
+
+@keyframes revealSubtle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* -----------------------------------------------------------------------------
    Confession Wall
    ----------------------------------------------------------------------------- */
 .page-confession {
