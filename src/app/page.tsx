@@ -140,6 +140,10 @@ export default function Home() {
             <img src="/sam.jpg" alt="Sam Kim" width={50} height={50} className="editor-photo" />
             <span className="editor-name">Sam Kim</span>
           </div>
+          <div className="editor">
+            <img src="/samuel.jpg" alt="Samuel Chiang" width={50} height={50} className="editor-photo" />
+            <span className="editor-name">Samuel Chiang</span>
+          </div>
         </div>
       </div>
     </div>,
